@@ -6,6 +6,7 @@ WORKDIR /app
 RUN mkdir boost
 COPY ./boost boost
 ENV BOOST_ROOT="/app/boost"
+ENV Boost_INCLUDE_DIR="/app/boost"
 
 # Install necessary dependencies
 RUN apt-get update
