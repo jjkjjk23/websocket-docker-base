@@ -3,6 +3,9 @@ FROM gcc:latest
 
 # Set the working directory inside the container
 WORKDIR /app
+RUN mkdir boost
+COPY ./boost boost
+ENV BOOST_ROOT="/app/boost"
 
 # Install necessary dependencies
 RUN apt-get update
@@ -20,5 +23,4 @@ RUN ./llvm.sh 18 all
 RUN apt-get install -y libssl-dev libcurl4-gnutls-dev
 RUN apt-get install -y ninja-build
 RUN apt-get install -y libpq-dev
-RUN apt-get install -y libboost-system-dev
 RUN apt-get install -y openssl
