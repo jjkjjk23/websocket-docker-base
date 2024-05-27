@@ -1,7 +1,7 @@
 FROM archlinux
 WORKDIR /app
 RUN pacman -Syu --noconfirm cmake
-RUN pacman -Syu --noconfirm gcc
+RUN pacman -Syu --noconfirm clang
 RUN pacman -Syu --noconfirm boost
 RUN pacman -Syu --noconfirm	postgresql-libs
 RUN pacman -Syu --noconfirm openssl
